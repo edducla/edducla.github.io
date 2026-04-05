@@ -10,9 +10,9 @@
     
     /* Couleurs */
     --bg-color: #fefef5;       /* Couleur de fond (blanc cassé) */
-    --text-color: #16f4b9;     /* Couleur du texte (gris foncé) */
+    --text-color: #3c0ea6;     /* Couleur du texte (gris foncé) */
     --link-color: #ff005d;     /* Couleur des liens (terracotta) */
-    --link-hover: #046a6c;     /* Couleur des liens au survol */
+    --link-hover: #ffcaeb;     /* Couleur des liens au survol */
 }
 
 /* =========================================
@@ -38,17 +38,17 @@ body {
     justify-content: center;
     
     /* Marges intérieures : 8vh en haut/bas, 1rem sur les côtés */
-    padding: 8vh 1rem; 
+    padding: 4vh 1rem; 
 }
 
 .wrapper {
     width: 100%;
-    max-width: 800px; /* Largeur max pour que le texte reste lisible */
+    max-width: 950px; /* Largeur max pour que le texte reste lisible */
     
     /* On empile les blocs avec beaucoup d'espace entre eux */
     display: flex;
     flex-direction: column;
-    gap: 6rem; /* C'est cet espace qui crée la respiration lors du scroll */
+    gap: 4rem; /* C'est cet espace qui crée la respiration lors du scroll */
 }
 
 /* =========================================
@@ -70,7 +70,7 @@ h1 {
 h2 {
     font-size: 2.5rem;
     font-weight: normal;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
    
 }
 
@@ -131,7 +131,7 @@ footer {
 .small-text {
     font-size: 1.1rem;
     opacity: 0.6;
-    margin-top: 2rem;
+    margin-top: -3rem;
     font-style: italic;
 }
 
@@ -151,4 +151,16 @@ footer {
     .wrapper {
         gap: 4rem; /* Réduit un peu les grands espaces sur mobile */
     }
+}
+
+.wedding-photo {
+  max-width: 260px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem;
+border-radius: 50%;
+aspect-ratio: 1;
+object-fit: cover;
+object-position: center;
 }
