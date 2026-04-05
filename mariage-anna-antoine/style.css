@@ -1,0 +1,154 @@
+/* =========================================
+   VARIABLES (LE PANNEAU DE CONTRÔLE)
+   ========================================= */
+:root {
+    /* Typographie */
+    --font-family: 'Instrument Serif', serif;
+    
+    /* Alignement (center, left, ou right) */
+    --text-align: center;
+    
+    /* Couleurs */
+    --bg-color: #fefef5;       /* Couleur de fond (blanc cassé) */
+    --text-color: #16f4b9;     /* Couleur du texte (gris foncé) */
+    --link-color: #ff005d;     /* Couleur des liens (terracotta) */
+    --link-hover: #046a6c;     /* Couleur des liens au survol */
+}
+
+/* =========================================
+   RESET BASIQUE
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   STRUCTURE PRINCIPALE (Avec scrolling)
+   ========================================= */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    text-align: var(--text-align);
+    
+    /* Centrage de la colonne principale */
+    display: flex;
+    justify-content: center;
+    
+    /* Marges intérieures : 8vh en haut/bas, 1rem sur les côtés */
+    padding: 8vh 1rem; 
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 800px; /* Largeur max pour que le texte reste lisible */
+    
+    /* On empile les blocs avec beaucoup d'espace entre eux */
+    display: flex;
+    flex-direction: column;
+    gap: 6rem; /* C'est cet espace qui crée la respiration lors du scroll */
+}
+
+/* =========================================
+   TYPOGRAPHIE & ÉLÉMENTS
+   ========================================= */
+h1 {
+    font-size: clamp(3.5rem, 8vw, 6rem); /* Taille très grande et fluide */
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    opacity: 0.8;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    margin-bottom: 3rem;
+   
+}
+
+/* =========================================
+   PROGRAMME (SCHEDULE)
+   ========================================= */
+.schedule {
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem; /* Espace entre Samedi et Dimanche */
+}
+
+.day {
+    flex: 1;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    margin-bottom: 2rem; /* Plus d'espace entre chaque ligne de programme */
+    font-size: 1.4rem;
+    line-height: 1.4;
+}
+
+.time {
+    font-weight: normal;
+    display: block; 
+    opacity: 1.0;
+    font-size: 1.3rem;
+    margin-bottom: 0.2rem;
+}
+
+/* =========================================
+   LIENS ET FOOTER
+   ========================================= */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    border-bottom: 0.5px solid var(--link-color);
+    padding-bottom: 0.0rem;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--link-hover);
+    border-bottom: 0.5px solid var(--link-hover);
+}
+
+footer {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0); /* Petite ligne fine pour séparer le footer */
+}
+
+.small-text {
+    font-size: 1.1rem;
+    opacity: 0.6;
+    margin-top: 2rem;
+    font-style: italic;
+}
+
+.heart {
+    color: var(--link-color);
+}
+
+/* =========================================
+   RESPONSIVE (POUR LES TÉLÉPHONES)
+   ========================================= */
+@media (max-width: 768px) {
+    .schedule {
+        flex-direction: column; /* Empile les jours au lieu d'être côte à côte */
+        gap: 4rem;
+    }
+    
+    .wrapper {
+        gap: 4rem; /* Réduit un peu les grands espaces sur mobile */
+    }
+}
